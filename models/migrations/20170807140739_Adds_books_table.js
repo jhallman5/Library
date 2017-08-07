@@ -4,7 +4,8 @@ exports.up = function(knex, Promise) {
     table.increments()
     table.string('title')
     table.string('author')
-    table.string('URL_image')
+    table.integer('published')
+    table.text('description')
   })
 };
 
