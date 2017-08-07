@@ -1,9 +1,13 @@
 <%- include partials/header %>
 
-<% reviews.forEach(function(review) { %>
-  <div>
-    Hi
+<div class="columns">
+  <div class="column is-one-third is-offset-6">
+    <% reviews.forEach(function(review) { %>
+      <div>
+       <%- include partials/review %>
+      </div>
+    <% }) %>
   </div>
-  <% }) %>
+</div>
 
 <%- include partials/footer %>
