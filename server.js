@@ -10,6 +10,7 @@ const PORT = process.env.NODE_ENV || 3000
 require('ejs')
 server.set('view engine', 'ejs')
 
+server.use('/css', express.static(path.join(__dirname, '/node_modules/bulma/css')))
 server.use(express.static(path.join(__dirname, 'public')))
 server.use(bodyParser.urlencoded({ extended: false }))
 

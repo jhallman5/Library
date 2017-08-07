@@ -1,7 +1,12 @@
 const router = require('express').Router()
+const { Reviews } = require('../../models/bookshelf')
 
 router.get('/', (req, res) => {
-  res.render('home')
+  Reviews.forge()
+    .fetchAll()
+    .then( reviews => {
+      res.render('home', {reviews: reviews})
+    })
 })
 router.get('/user-profile', (req, res) => {
   res.render('user-profile')
