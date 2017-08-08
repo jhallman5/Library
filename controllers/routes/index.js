@@ -1,10 +1,15 @@
 const router = require('express').Router()
-const { User, Book, Review } = require('../../models/bookshelf')
+// const { User, Book, Review } = require('../../models/bookshelf')
+const User = require('../../models/db/users')
+const Review = require('../../models/reviews')
 
 router.get('/', (req, res) => {
+  Review.threeMostRecentReviews()
+    .then( reviews => {
+      console.log( "=-=-=-> reviews", reviews )
+      res.render('home', {reviews: reviews})
 
-      res.render('home', {reviews: [1,2,3]})
-
+    })
 })
 router.get('/user-profile', (req, res) => {
   res.render('user-profile')

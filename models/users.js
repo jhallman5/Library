@@ -1,6 +1,8 @@
-//punits example
+const User = require('./db/users')
 
-const DbUser = require('./bookshelf').User
+const threeMostRecentReviews = () => {
+  User.getAllReviews()
+}
 
 const fullName = (user) => {
   return user.firstName + ' ' + user.lastName

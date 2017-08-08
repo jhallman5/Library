@@ -1,13 +1,15 @@
 <div class="box">
-  <article="media">
-    <figure class="media-left">
-      <p class="image is-64x64">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Dr_Who_%28316350537%29.jpg/170px-Dr_Who_%28316350537%29.jpg"/>
-      </p>
-    </figure>
+      </figure>
+    </div>
     <div class="media-content">
       <div class="content">
-        <%= review.attributes.content %>
+        <strong><em><%= review.title %></em></strong> <br />
+        <%= review.content %> <br />
+        by <strong><%= review.username %></strong>
       </div>
     </div>
   </article>
