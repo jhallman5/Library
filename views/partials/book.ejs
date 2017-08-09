@@ -7,9 +7,10 @@
     </div>
     <div class="media-content">
       <div class="content">
-        <a href='/book/<%= review.book_id %>'><em><%= review.title %></em></a> <br />
-        <%= review.content %> <br />
-        by <a href='/user/<%= review.user_id %>'><%= review.username %></a>
+        <a href="/book/<%= book.id %>"><em><%= book.title %></em></a><br />
+         by <em><%= book.author %></em> <br />
+        <%= book.description %> <br />
+        published <strong><%= book.published %></strong>
       </div>
     </div>
   </article>

@@ -1,12 +1,19 @@
 <%- include partials/header %>
 <%- include partials/nav %>
 
+<div class="content">
+    <img class="background-image" src="http://momentumbooks.com.au/wp-content/uploads/2015/08/4x08-Silence-in-the-Library-doctor-who-21242392-1600-900.jpg" />
+</div>
+
 <div class="columns">
-  <div class="column is-one-third is-offset-6">
+  <div class="column is-one-third is-offset-1">
+    <% books.forEach(function(book){ %>
+      <%- include partials/book %>
+    <% }) %>
+  </div>
+  <div class="column is-one-third is-offset-2">
     <% reviews.forEach(function(review) { %>
-      <div>
        <%- include partials/review %>
-      </div>
     <% }) %>
   </div>
 </div>

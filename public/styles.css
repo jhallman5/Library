@@ -1,3 +1,8 @@
 .navbar {
   background-color: #989898;
 }
+
+.background-image {
+  height: 40vh;
+  width: 100vw;
+}
