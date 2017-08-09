@@ -1,0 +1,17 @@
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Dr_Who_%28316350537%29.jpg/170px-Dr_Who_%28316350537%29.jpg"/>
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <a href="/book/<%= book.id %>"><em><%= book.title %></em></a><br />
+         by <em><%= book.author %></em> <br />
+        <%= book.description %> <br />
+        published <strong><%= book.published %></strong>
+      </div>
+    </div>
+  </article>
+</div>
