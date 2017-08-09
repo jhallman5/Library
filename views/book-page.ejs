@@ -1,8 +1,20 @@
 <%- include partials/header %>
 <%- include partials/nav %>
 
-<div>
-  Hi There! this is a book.
-</div>
+<section class="hero is-warning is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= book.title %>
+      </h1>
+      <h2 class="subtitle">
+        by <em><%= book.author %></em>
+      </h2>
+    </div>
+  </div>
+</section>
+<a class="button is-outlined is-dark" href="/review/new">
+  Add your review!
+</a>
 
 <%- include partials/footer %>
