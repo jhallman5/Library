@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const Review = require('../../models/reviews')
 const Book = require('../../models/books')
+const passport = require('../../auth/passport')
 
 router.get('/', (req, res) => {
   Review.threeMostRecentReviews()
@@ -18,8 +19,7 @@ router.get('/sign-in', (req, res) => {
 })
 
 router.post('/sign-in', (req, res) => {
-  
-  res.render('sign-in')
+  passport.authenticate('local', { successRedirect: '/', failureRedirect: '/sign-in' })(req, res)
 })
 
 router.get('/error', (req, res) => {

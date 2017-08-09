@@ -17,7 +17,7 @@ server.use('/public', express.static(path.join(__dirname, 'public')))
 server.use(bodyParser.urlencoded({ extended: false }))
 server.use(cookieParser())
 server.use(session({
-  secret:'SHHHHHHI-I'
+  secret:'SHHHHHHII'
 }))
 
 server.use(passport.initialize())
