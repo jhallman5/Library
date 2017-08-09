@@ -7,7 +7,8 @@ const getAll = () =>
 const getById = (id) =>
   knex.select('*')
     .from('books')
-    .where('id', '=', id)
+    .leftOuterJoin('reviews','books.id', 'reviews.book_id')
+    .where('books.id', '=', id)
 
 module.exports = {
   getAll,
