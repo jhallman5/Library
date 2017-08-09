@@ -1,8 +1,8 @@
 const knex = require('knex')(require('./knexfile'))
 
-const getAllReviews = () =>
-  knex.select('*').from('users').leftOuterJoin('reviews', 'users.id', 'reviews.user_id')
+const getByUsername = (username) =>
+  knex.first('*').from('users').where('username', username)
 
 module.exports = {
-  getAllReviews
+  getByUsername
 }
