@@ -1,7 +1,7 @@
 <%- include partials/header %>
 <%- include partials/nav %>
 
-<div class="field column is-one-third is-offset-4">
+<form class="field column is-one-third is-offset-4" method="post" action="sign-in">
   <div class="control">
     <input class="input" type="text" placeholder="Email" name="email">
   </div>
@@ -16,7 +16,7 @@
   <div class="control">
     <button class="button is-outlined is-primary">Sign In</button>
   </div>
-</div>
+</form>
 
 
 <%- include partials/footer %>

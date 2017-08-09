@@ -17,6 +17,11 @@ router.get('/sign-in', (req, res) => {
   res.render('sign-in')
 })
 
+router.post('/sign-in', (req, res) => {
+  
+  res.render('sign-in')
+})
+
 router.get('/error', (req, res) => {
   res.render('error')
 })
