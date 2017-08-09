@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const Book = require('../../models/books')
 
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
   res.render('user-profile')
 })
 

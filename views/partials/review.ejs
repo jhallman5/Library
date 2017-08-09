@@ -7,9 +7,9 @@
     </div>
     <div class="media-content">
       <div class="content">
-        <strong><em><%= review.title %></em></strong> <br />
+        <a href='/book/<%= review.book_id %>'><em><%= review.title %></em></a> <br />
         <%= review.content %> <br />
-        by <strong><%= review.username %></strong>
+        by <a href='/user/<%= review.user_id %>'><%= review.username %></a>
       </div>
     </div>
   </article>
