@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     .then( reviews => {
       Book.getAll()
         .then( books => {
-          res.render('home', {reviews: reviews, books: books})
+          res.render('home', {reviews: reviews, books: books, session: req.session.passport})
         })
     })
     .catch( error => res.render('error', {error: error}))
