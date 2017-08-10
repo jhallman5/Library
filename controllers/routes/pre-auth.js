@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const Review = require('../../models/reviews')
 const Book = require('../../models/books')
+const User = require('../../models/users')
 const passport = require('../../auth/passport')
 
 router.get('/', (req, res) => {
@@ -20,6 +21,17 @@ router.get('/sign-in', (req, res) => {
 
 router.post('/sign-in', (req, res) => {
   passport.authenticate('local', { successRedirect: '/', failureRedirect: '/sign-in' })(req, res)
+})
+
+router.get('/sign-up', (req, res) => {
+  res.render('sign-up')
+})
+
+router.post('/sign-up', (req, res) => {
+  const{email, username, password} = req.body
+  User.create(email, username, password)
+    .then( () =>
+      res.render('/'))
 })
 
 router.get('/error', (req, res) => {
