@@ -1,0 +1,11 @@
+<%- include partials/header %>
+<%- include partials/nav %>
+
+<div class="column is-one-third is-offset-1">
+  Search Results 
+  <% books.forEach(function(book){ %>
+    <%- include partials/book %>
+  <% }) %>
+</div>
+
+<%- include partials/footer %>
