@@ -30,8 +30,7 @@ router.get('/sign-up', (req, res) => {
 router.post('/sign-up', (req, res) => {
   const{email, username, password} = req.body
   User.create(email, username, password)
-    .then( () =>
-      res.render('/'))
+    .then( (user) => res.redirect(`/user/${user.id}`))
 })
 
 router.get('/error', (req, res) => {

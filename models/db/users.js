@@ -7,7 +7,7 @@ const findById = (id) =>
   knex.first('*').from('users').where('id', id)
 
 const create = (email, username, password) =>
-  knex.insert({email, username, password}).into('users')
+  knex.insert({email, username, password}).into('users').first('id')
 
 module.exports = {
   getByUsername,
