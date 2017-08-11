@@ -5,10 +5,12 @@ exports.up = function(knex, Promise) {
     table.string('email')
     table.string('username')
     table.string('password')
+    table.string('role').defaultTo('user')
     table.date('member_since').defaultTo(knex.fn.now())
   })
 };
 
 exports.down = function(knex, Promise) {
   return knex.schema.dropTable('users')
+
 };

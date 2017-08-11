@@ -5,6 +5,7 @@ const session = require('express-session')
 const path = require('path')
 const { router } = require('./controllers/routes')
 const passport = require('./auth/passport')
+const methodOverride = require('method-override')
 
 const server = express()
 const PORT = process.env.NODE_ENV || 3000
@@ -14,6 +15,7 @@ server.set('view engine', 'ejs')
 
 server.use('/bulma', express.static(path.join(__dirname, '/node_modules/bulma/css')))
 server.use('/public', express.static(path.join(__dirname, 'public')))
+server.use(methodOverride('_method'))
 server.use(bodyParser.urlencoded({ extended: false }))
 server.use(cookieParser())
 server.use(session({

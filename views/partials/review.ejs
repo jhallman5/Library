@@ -10,6 +10,11 @@
         <a href='/book/<%= review.book_id %>'><em><%= review.title %></em></a> <br />
         <%= review.content %> <br />
         by <a href='/user/<%= review.user_id %>'><%= review.username %></a>
+        <form class="control" action="/review/<%= review.id %>?_method=DELETE" method="POST">
+          <button class="button is-small is-right" type="submit">
+          <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </form>
       </div>
     </div>
   </article>
