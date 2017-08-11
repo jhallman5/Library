@@ -1,8 +1,28 @@
 <%- include partials/header %>
 <%- include partials/nav %>
 
-<div>
-  Hello User
+<div class=columns>
+  <div class="card column is-3 is-offset-1 ">
+    <div class="card-image">
+      <figure class="image is-128x128">
+        <img src="http://s4.evcdn.com/images/block/I0-001/039/022/931-4.jpeg_/dr-who-eveningoftime-travel-31.jpeg">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <p class="is-small">
+            Username: <%= user.username %>
+          </p>
+          <p class="is-small">
+            Email: <%= user.email %>
+          </p>
+          <p class="is-small">
+            Member since: <%= user.member_since %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
 <%- include partials/footer %>

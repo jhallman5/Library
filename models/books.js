@@ -6,7 +6,11 @@ const getAll = () =>
 const getById = (id) =>
   Book.getById(id)
 
+const search = (searchTerm) =>
+  Book.search(searchTerm)
+  
 module.exports = {
   getAll,
-  getById
+  getById,
+  search
 }

@@ -1,8 +1,14 @@
 const router = require('express').Router()
-const Book = require('../../models/books')
+const User = require('../../models/users')
+
+router.get('/logout', (req, res) => {
+  req.session.destroy( res.redirect('/'))
+})
 
 router.get('/:id', (req, res) => {
-  res.render('user-profile')
+  User.findById(req.params.id)
+    .then( user =>
+      res.render('user-profile', {user,  session: req.session.passport} ))
 })
 
 module.exports = router

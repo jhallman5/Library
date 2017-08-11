@@ -7,23 +7,27 @@
 
   <div class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item">
-        First link
-      </a>
-
-      <a class="navbar-item">
-        Second link
-      </a>
-
-      <a class="navbar-item">
-        Third link
-      </a>
+      <% if(locals.session) { %>
+        <a class="navbar-item" href="user/<%= locals.session.user %>">
+          Profile
+        </a>
+        <a class="navbar-item" href="/user/logout">
+          Logout
+        </a>
+      <% } else { %>
+        <a class="navbar-item" href="/sign-in">
+          Sign In
+        </a>
+        <a class="navbar-item" href="/sign-up">
+          Sign Up
+        </a>
+      <% } %>
     </div>
     <div class="navbar-end">
       <div class="field">
-        <div class="control">
-          <input class="input" type="text" placeholder="search" />
-        </div>
+        <form class="control" method="GET" action="/book/search?searchTerm">
+          <input class="input" type="text" placeholder="search" name="searchTerm" />
+        </form>
       </div>
 
     </div>

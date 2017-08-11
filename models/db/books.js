@@ -10,7 +10,16 @@ const getById = (id) =>
     .leftOuterJoin('reviews','books.id', 'reviews.book_id')
     .where('books.id', '=', id)
 
+const search = (searchTerm) =>
+  knex.select('*')
+    .from('books')
+    .where(function() {
+      this.where('title', 'ilike', `%${searchTerm}%`)
+        .orWhere('author', 'ilike', `%${searchTerm}%`)
+    })
+
 module.exports = {
   getAll,
-  getById
+  getById,
+  search
 }
