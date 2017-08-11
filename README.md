@@ -1,12 +1,12 @@
 # library
 
-moment / format dates - 2
+<!-- moment / format dates - 2 -->
 
 truncate review length - 4
 
 authorization - 1
 
-comments on reviews- 6 
+comments on reviews- 6
 
 pagination -3
 
