@@ -9,8 +9,14 @@ const findById = (id) =>
 const create = (email, username, password) =>
   knex.insert({email, username, password}).into('users').first('id')
 
+const isAdmin = (id) =>
+  knex.first('role')
+    .from('users')
+    .where('id', id)
+
 module.exports = {
   getByUsername,
   findById,
-  create
+  create,
+  isAdmin
 }
